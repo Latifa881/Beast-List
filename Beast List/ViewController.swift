@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var taskTextField: UITextField!
     
@@ -18,40 +18,45 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
-
-
+    
+    
     @IBAction func beastButtonPressed(_ sender: UIButton) {
         guard let task = taskTextField.text else{return}
         if !task.isEmpty{
-        tasks.append(task)
-        tableView.reloadData()
-        taskTextField.text=""
+            tasks.append(task)
+            tableView.reloadData()
+            taskTextField.text=""
         }
         
     }
 }
 
 
-extension ViewController: UITableViewDataSource {
-
-
-    // MAKE SURE THESE ARE WITHIN UITableViewDataSource EXTENSION!
+extension ViewController: UITableViewDataSource , UITableViewDelegate{
+    //Datasource
     // How many cells are we going to need?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return an integer that indicates how many rows (cells) to draw
         return tasks.count
     }
-
+    
     // How should I create each cell?
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Get the UITableViewCell and create/populate it with data then return it
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         cell.textLabel?.text = tasks[indexPath.row]
         
         return cell
     }
-
-
-
+    //Delegate
+    //What we write here will be implemented as soon as one of the table view cells are tapped
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Section: \(indexPath.section) and Row: \(indexPath.row)")
+        tasks.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
+    
+    
 }
