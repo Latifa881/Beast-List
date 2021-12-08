@@ -16,6 +16,8 @@
 		C30BFCF4275E286400B733B7 /* Beast_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30BFCF3275E286400B733B7 /* Beast_ListTests.swift */; };
 		C30BFCFE275E286400B733B7 /* Beast_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30BFCFD275E286400B733B7 /* Beast_ListUITests.swift */; };
 		C30BFD00275E286400B733B7 /* Beast_ListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30BFCFF275E286400B733B7 /* Beast_ListUITestsLaunchTests.swift */; };
+		C30BFE3B2760DDD900B733B7 /* BeastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30BFE3A2760DDD900B733B7 /* BeastTableViewCell.swift */; };
+		C30BFE3D2760E48500B733B7 /* BeastCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30BFE3C2760E48500B733B7 /* BeastCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		C30BFCF9275E286400B733B7 /* Beast ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Beast ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30BFCFD275E286400B733B7 /* Beast_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beast_ListUITests.swift; sourceTree = "<group>"; };
 		C30BFCFF275E286400B733B7 /* Beast_ListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beast_ListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C30BFE3A2760DDD900B733B7 /* BeastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeastTableViewCell.swift; sourceTree = "<group>"; };
+		C30BFE3C2760E48500B733B7 /* BeastCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeastCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				C30BFCDE275E286000B733B7 /* SceneDelegate.swift */,
 				C30BFCE0275E286000B733B7 /* ViewController.swift */,
 				C30BFCE2275E286000B733B7 /* Main.storyboard */,
+				C30BFE3C2760E48500B733B7 /* BeastCellDelegate.swift */,
+				C30BFE3A2760DDD900B733B7 /* BeastTableViewCell.swift */,
 				C30BFCE5275E286300B733B7 /* Assets.xcassets */,
 				C30BFCE7275E286300B733B7 /* LaunchScreen.storyboard */,
 				C30BFCEA275E286300B733B7 /* Info.plist */,
@@ -259,6 +265,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C30BFCE1275E286000B733B7 /* ViewController.swift in Sources */,
+				C30BFE3D2760E48500B733B7 /* BeastCellDelegate.swift in Sources */,
+				C30BFE3B2760DDD900B733B7 /* BeastTableViewCell.swift in Sources */,
 				C30BFCDD275E286000B733B7 /* AppDelegate.swift in Sources */,
 				C30BFCDF275E286000B733B7 /* SceneDelegate.swift in Sources */,
 			);

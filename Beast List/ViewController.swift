@@ -7,10 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,  BeastCellDelegate {
+  
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var taskTextField: UITextField!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var tasks = ["Exercise for 30 minutes", "Wireframe for some project", "Do laundry"]
     
@@ -31,6 +34,10 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    func showTaskDescription(description: String) {
+        descriptionLabel.text = description
+    }
 }
 
 
@@ -45,18 +52,20 @@ extension ViewController: UITableViewDataSource , UITableViewDelegate{
     // How should I create each cell?
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        cell.textLabel?.text = tasks[indexPath.row]
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! BeastTableViewCell
+        cell.taskLabel.text = tasks[indexPath.row]
+        // This line is very important! Now the cell has a reference to the view controller itself.
+        cell.delegate = self
         return cell
     }
-    //Delegate
-    //What we write here will be implemented as soon as one of the table view cells are tapped
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Section: \(indexPath.section) and Row: \(indexPath.row)")
-        tasks.remove(at: indexPath.row)
-        tableView.reloadData()
-    }
+//    //Delegate
+//    //What we write here will be implemented as soon as one of the table view cells are tapped
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("Section: \(indexPath.section) and Row: \(indexPath.row)")
+//        tasks.remove(at: indexPath.row)
+//        tableView.reloadData()
+//
+//    }
     
     
 }
